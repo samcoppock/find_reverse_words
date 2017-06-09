@@ -11,7 +11,9 @@ public class main {
 
 
     public static void main(String[] args){
-        System.out.println("hello world");
+
+        StringBuilder reverse = new StringBuilder("hello world").reverse();
+        System.out.println(reverse);
 
         SortedSet<String> inputWords = new TreeSet<String>(new compareLength());
         inputWords.add("BB");
