@@ -24,9 +24,10 @@ public class main {
         Iterator<String> i = inputWords.iterator();
         while (i.hasNext()) {
             String currentWord = i.next(); // must be called before you can call i.remove()
+            i.remove(); // called before looping through the whole treeSet
             System.out.println(currentWord);
             System.out.println("----------------");
-            i.remove();
+
         }
 
     }
