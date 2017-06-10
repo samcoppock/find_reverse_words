@@ -1,4 +1,5 @@
 
+
 /**
  * Created by admin on 6/9/2017.
  */
@@ -8,7 +9,6 @@ public class main {
 
         PrintReversePairs printReversePairs = new PrintReversePairs();
         printReversePairs.printReverseWords();
-
 
     }
 

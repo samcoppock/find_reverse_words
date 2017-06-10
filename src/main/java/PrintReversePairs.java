@@ -1,3 +1,5 @@
+import supportClasses.compareLength;
+
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,8 +15,6 @@ import java.util.TreeSet;
 public class PrintReversePairs {
 
     public void printReverseWords() throws FileNotFoundException{
-        PrintReversePairs printReversePairs = new PrintReversePairs();
-
 
         SortedSet<String> inputWords = new TreeSet<String>(new compareLength());
         String filePath = "C:\\work\\text_sorter\\src\\main\\artifacts\\sample.txt";
