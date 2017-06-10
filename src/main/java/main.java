@@ -13,7 +13,7 @@ public class main {
 
     public static void main(String[] args) throws Exception{
 
-        String filePath = "C:\\work\\text_sorter\\src\\main\\artifacts";
+        String filePath = "C:\\work\\text_sorter\\src\\main\\artifacts\\sample.txt";
         FileInputStream inputFile = null;
 
         try {
