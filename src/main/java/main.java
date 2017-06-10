@@ -14,7 +14,8 @@ public class main {
         String filePath = "C:\\work\\text_sorter\\src\\main\\artifacts\\sample.txt";
         InputStream inputFile = null;
         String currentWord;
-        int wordLen;
+        String reverseWord;
+        int reverseWordLen;
 
         try {
             inputFile = new BufferedInputStream(new FileInputStream(filePath));
@@ -32,24 +33,23 @@ public class main {
         Iterator<String> i = inputWords.iterator();
         while (i.hasNext()) {
             currentWord = i.next();
-            StringBuilder reverse = new StringBuilder(currentWord).reverse();
-            wordLen = currentWord.length();
+            StringBuilder reverseWordBuilder = new StringBuilder(currentWord).reverse();
+            reverseWord = reverseWordBuilder.toString();
+            reverseWordLen = reverseWord.length();
 
             i.remove(); // called before looping through the whole treeSet
 
             for (String w: inputWords) {
-                if (wordLen == reverse.length()){
-                    if (w.equals(reverse)){
-                        System.out.println(w + " : " + reverse);
+                if (w.length() == reverseWordLen){
+                    if (w.equals(reverseWord)){
+                        System.out.println(w + " : " + reverseWord);
+                        System.out.println("");
                         break;
                     }
                 } else {
                     break;
                 }
             }
-
-            System.out.println(currentWord);
-            System.out.println("----------------");
 
         }
 
