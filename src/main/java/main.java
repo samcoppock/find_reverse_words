@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -14,10 +11,10 @@ public class main {
     public static void main(String[] args) throws Exception{
 
         String filePath = "C:\\work\\text_sorter\\src\\main\\artifacts\\sample.txt";
-        FileInputStream inputFile = null;
+        InputStream inputFile = null;
 
         try {
-            inputFile = new FileInputStream(filePath);
+            inputFile = new BufferedInputStream(new FileInputStream(filePath));
         } catch (FileNotFoundException e) {
 
         }
