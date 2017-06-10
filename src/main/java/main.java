@@ -27,17 +27,27 @@ public class main {
             inputWords.add(sc.next());
         }
 
-        StringBuilder reverse = new StringBuilder("hello world").reverse();
-        System.out.println(reverse);
-
-
 
 
         Iterator<String> i = inputWords.iterator();
         while (i.hasNext()) {
-            currentWord = i.next();// must be called before you can call i.remove()
+            currentWord = i.next();
+            StringBuilder reverse = new StringBuilder(currentWord).reverse();
             wordLen = currentWord.length();
+
             i.remove(); // called before looping through the whole treeSet
+
+            for (String w: inputWords) {
+                if (wordLen == reverse.length()){
+                    if (w.equals(reverse)){
+                        System.out.println(w + " : " + reverse);
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+
             System.out.println(currentWord);
             System.out.println("----------------");
 
