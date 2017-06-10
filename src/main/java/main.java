@@ -42,7 +42,7 @@ public class main {
             for (String w: inputWords) {
                 if (w.length() == reverseWordLen){
                     if (w.equals(reverseWord)){
-                        System.out.println(w + " : " + reverseWord);
+                        System.out.println(w + " : " + currentWord);
                         System.out.println("");
                         break;
                     }
