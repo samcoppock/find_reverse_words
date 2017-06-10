@@ -16,7 +16,7 @@ public class PrintReversePairs {
 
     public void printReverseWords() throws FileNotFoundException{
 
-        getWordsFromFile("C:\\work\\text_sorter\\src\\main\\artifacts\\sample.txt");
+        getWordsFromFile("C:\\work\\text_sorter\\src\\main\\resources\\sample.txt");
         generateOutput();
 
     }
