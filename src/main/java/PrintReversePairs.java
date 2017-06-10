@@ -59,7 +59,6 @@ public class PrintReversePairs {
                 if (w.length() == reverseWordLen){
                     if (w.equals(reverseWord)){
                         System.out.println(w + " : " + currentWord);
-                        System.out.println("");
                         break;
                     }
                 } else {
