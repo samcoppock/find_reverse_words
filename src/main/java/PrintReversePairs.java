@@ -10,8 +10,8 @@ import java.util.*;
  */
 public class PrintReversePairs {
 
-    // use of TreeSet automatically removed duplicate words
-    // use of compareLength sorts the words automatically and allows use of an efficiency improving technique later on.
+    // TreeSet is used because it automatically removes duplicate words and is compatible with comparator and iterator.
+    // Use of compareLength sorts the words automatically and allows use of an efficiency improving technique later on.
     private Set<String> inputWords = new TreeSet<String>(new compareLength());
 
     public void printReverseWords() throws FileNotFoundException{
