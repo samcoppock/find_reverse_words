@@ -10,8 +10,11 @@ public class main {
 
     public static void main(String[] args) throws Exception{
 
+        SortedSet<String> inputWords = new TreeSet<String>(new compareLength());
         String filePath = "C:\\work\\text_sorter\\src\\main\\artifacts\\sample.txt";
         InputStream inputFile = null;
+        String currentWord;
+        int wordLen;
 
         try {
             inputFile = new BufferedInputStream(new FileInputStream(filePath));
@@ -21,25 +24,19 @@ public class main {
 
         Scanner sc = new Scanner(new FileInputStream(filePath));
         while (sc.hasNext()) {
-            String i = sc.next();
-            System.out.println(i);
-            System.out.println("---");
+            inputWords.add(sc.next());
         }
 
         StringBuilder reverse = new StringBuilder("hello world").reverse();
         System.out.println(reverse);
 
-        SortedSet<String> inputWords = new TreeSet<String>(new compareLength());
-        inputWords.add("BB");
-        inputWords.add("CCC");
-        inputWords.add("A");
-        inputWords.add("A");
-        inputWords.add("EEEEE");
-        inputWords.add("DDDD");
+
+
 
         Iterator<String> i = inputWords.iterator();
         while (i.hasNext()) {
-            String currentWord = i.next(); // must be called before you can call i.remove()
+            currentWord = i.next();// must be called before you can call i.remove()
+            wordLen = currentWord.length();
             i.remove(); // called before looping through the whole treeSet
             System.out.println(currentWord);
             System.out.println("----------------");
