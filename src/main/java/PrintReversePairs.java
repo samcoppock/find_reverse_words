@@ -14,9 +14,10 @@ import java.util.TreeSet;
  */
 public class PrintReversePairs {
 
+    private SortedSet<String> inputWords = new TreeSet<String>(new compareLength());
+
     public void printReverseWords() throws FileNotFoundException{
 
-        SortedSet<String> inputWords = new TreeSet<String>(new compareLength());
         String filePath = "C:\\work\\text_sorter\\src\\main\\artifacts\\sample.txt";
         InputStream inputFile = null;
         String currentWord;
@@ -35,8 +36,13 @@ public class PrintReversePairs {
         }
 
 
+        generateOutput();
+    }
 
-        Iterator<String> i = inputWords.iterator();
+    private void generateOutput() {
+        String currentWord;
+        String reverseWord;
+        int reverseWordLen;Iterator<String> i = inputWords.iterator();
         while (i.hasNext()) {
             currentWord = i.next();
             StringBuilder reverseWordBuilder = new StringBuilder(currentWord).reverse();
