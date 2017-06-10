@@ -50,7 +50,8 @@ public class PrintReversePairs {
             reverseWordLen = reverseWord.length();
 
             //This prevents the upcoming internal loop from making comparisons with words which have already gone
-            //through the outer loop since these pairs have already been compared anyway.
+            //through the outer loop since these pairs have already been compared anyway. It also means each pair is
+            //only reported once.
             i.remove();
 
             for (String w: inputWords) {
