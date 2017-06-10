@@ -1,7 +1,4 @@
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Created by admin on 6/9/2017.
@@ -11,6 +8,13 @@ public class main {
 
 
     public static void main(String[] args){
+
+        Scanner sc = new Scanner("chive is cute");
+        while (sc.hasNext()) {
+            String i = sc.next();
+            System.out.println(i);
+            System.out.println("---");
+        }
 
         StringBuilder reverse = new StringBuilder("hello world").reverse();
         System.out.println(reverse);
