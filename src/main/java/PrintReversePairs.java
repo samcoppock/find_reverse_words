@@ -14,9 +14,9 @@ public class PrintReversePairs {
     // Use of compareLength sorts the words automatically and allows use of an efficiency improving technique later on.
     private Set<String> inputWords = new TreeSet<String>(new compareLength());
 
-    public void printReverseWords() throws FileNotFoundException{
+    public void printReverseWords(String filePath) throws FileNotFoundException{
 
-        getWordsFromFile("C:\\work\\text_sorter\\src\\main\\resources\\sample.txt");
+        getWordsFromFile(filePath);
         generateOutput();
 
     }
