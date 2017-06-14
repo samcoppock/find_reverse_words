@@ -1,14 +1,19 @@
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import supportClasses.compareLength;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+
+import java.io.*;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 
 /**
  * Created by admin on 6/10/2017.
  */
 public class PrintReversePairs {
+
+//    private final Logger slf4jLogger = LoggerFactory.getLogger(PrintReversePairs.class);
 
     // TreeSet is used because it automatically removes duplicate words and is compatible with comparator and iterator.
     // Use of compareLength sorts the words automatically and allows use of an efficiency improving technique later on.
@@ -21,23 +26,33 @@ public class PrintReversePairs {
 
     }
 
-    private void getWordsFromFile(String filePath) {
+    protected void getWordsFromFile(String filePath) throws FileNotFoundException {
 
         InputStream inputFile = null;
 
         try {
             inputFile = new BufferedInputStream(new FileInputStream(filePath));
         } catch (FileNotFoundException e) {
-
+            System.out.println("An unusable file path was provided" + e.getMessage() + " : " + e.getCause() );
+//            slf4jLogger.error("An unusable file path was provided" + e.getMessage() + " : " + e.getCause() + " : " + e.getStackTrace() );
+            throw e;
         }
 
         Scanner sc = new Scanner(inputFile);
         while (sc.hasNext()) {
             inputWords.add(sc.next());
         }
+        sc.close();
+
+        try {
+            inputFile.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage() + " : " + e.getCause());
+//            slf4jLogger.error(e.getMessage() + " : " + e.getCause() + " : " + e.getStackTrace());
+        }
     }
 
-    private void generateOutput() {
+    protected void generateOutput() {
         String currentWord;
         String reverseWord;
         int reverseWordLen;

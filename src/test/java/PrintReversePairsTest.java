@@ -1,13 +1,25 @@
 import org.junit.Test;
 
+import java.io.FileNotFoundException;
+
 /**
  * Created by admin on 6/11/2017.
  */
 public class PrintReversePairsTest {
 
-    @Test
-    public void testFileDoesNotExist(){
+    PrintReversePairs printReversePairs = new PrintReversePairs();
 
+    @Test (expected = FileNotFoundException.class)
+    public void testFileDoesNotExist() throws FileNotFoundException{
+
+        //Given
+        printReversePairs.printReverseWords("this is not a valid file path");
+    }
+
+    @Test (expected = FileNotFoundException.class)
+    public void testNoFileGiven() throws FileNotFoundException{
+        //Given
+        printReversePairs.printReverseWords("");
     }
 
     @Test
@@ -17,7 +29,7 @@ public class PrintReversePairsTest {
 
     @Test
     public void testFileNotATextFile(){
-
+        // currently works for image file types
     }
 
     @Test
